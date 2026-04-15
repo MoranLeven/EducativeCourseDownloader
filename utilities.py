@@ -7,8 +7,6 @@ from dotenv import load_dotenv
 load_dotenv()
 
 COOKIES = os.getenv("COOKIES")
-print("Reading the cookies from the dotenv file")
-print(COOKIES)
 
 
 def trace(func):
