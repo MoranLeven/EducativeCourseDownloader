@@ -1,3 +1,7 @@
+## Overview
+A python based fast CLI Tool for Educative Course downloading.
+
+
 Setup
 Open the project folder.
 
