@@ -17,9 +17,9 @@ The code reads this value from the environment and uses it for authenticated API
 ### USAGE
 
 ```python
-from KursoDownloaderLowLevelDesign.coursesearch import CourseSearch
-from KursoDownloaderLowLevelDesign.coursetocfetcher import CourseTOCFetcher
-from KursoDownloaderLowLevelDesign.coursefetcher import CourseChapterFetcher
+from KursoDownloader.coursesearch import CourseSearch
+from KursoDownloader.coursetocfetcher import CourseTOCFetcher
+from KursoDownloader.coursefetcher import CourseChapterFetcher
 import os
 cs = CourseSearch()
 cs.busco('system design')
@@ -27,11 +27,11 @@ course_result = cs.get('system design')
 cf = CourseTOCFetcher()
 cc = CourseChapterFetcher()
 coursesToc = {}
-coursesMainDir = "..//coursesChapterJson"
-for course_name in os.listdir(coursesMainDir):
-    tempTOC =  cf.get_kurso_toc(course_name)
-    # cc.downloadCourse(tempTOC)
-    cc.downloadOfflineCourse(f"..//coursesChapterJson//{course_name}",tempTOC)
+course_name = course_result[0]
+tempTOC =  cf.get_kurso_toc(course_name)
+cc.downloadCourse(tempTOC)
+#offline downloader if course json data is already downloaded
+#cc.downloadOfflineCourse("Course/Json/files/path",tempTOC)
 
 
 ```
