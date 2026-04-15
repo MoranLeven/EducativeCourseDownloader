@@ -26,7 +26,6 @@ cs.busco('system design')
 course_result = cs.get('system design')
 cf = CourseTOCFetcher()
 cc = CourseChapterFetcher()
-coursesToc = {}
 course_name = course_result[0]
 tempTOC =  cf.get_kurso_toc(course_name)
 cc.downloadCourse(tempTOC)
